@@ -1,26 +1,26 @@
 /*  your css code here. If applicable */
 body {
     font-family: Arial, sans-serif;
-    background: #202020;
+    background:#A259FF;
     color: white;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
 }
 
 #buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 16px;
+    margin-top: 100px;
 }
 
 .btn {
-    padding: 15px 25px;
-    font-size: 18px;
-    background: #3b82f6;
+    padding: 20px 25px;
+    font-size: 15px;
+    background: #8000FF;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     color: white;
     cursor: pointer;
 }
@@ -30,12 +30,12 @@ body {
 }
 
 .sto {
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 15px 40px;
     font-size: 20px;
     background: red;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
 }

@@ -1,29 +1,39 @@
 /*  your css code here. If applicable */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+  height: 100vh;
+  background-color: #a46be0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
 
-#buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.sound-container {
+  display: flex;
+  gap: 20px;
 }
 
-.btn, .stop {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
+.sound-btn {
+  padding: 12px 22px;
+  background-color: #6f3cb2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  text-transform: lowercase;
+  cursor: pointer;
 }
 
-.stop {
-    background-color: #dc3545; /* Red for stop button */
+.sound-btn:hover {
+  opacity: 0.9;
+}
+
+.sound-btn:active {
+  transform: scale(0.95);
 }

@@ -1,32 +1,28 @@
 //your JS code here. If required.
-// List of sounds (make sure files exist in sounds folder)
-// List of sound names – files must exist in sounds/ folder
-const buttons = document.querySelectorAll('.btn');
-const stopButton = document.querySelector('.stop');
 let currentAudio = null;
 
+const buttons = document.querySelectorAll(".sound-btn");
+const stopButton = document.getElementById("stop");
+
 buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const soundFile = button.getAttribute('data-sound');
-        playSound(soundFile);
-    });
-});
+  button.addEventListener("click", () => {
+    const sound = button.getAttribute("data-sound");
 
-stopButton.addEventListener('click', () => {
-    stopSound();
-});
+    if (!sound) return;
 
-function playSound(file) {
     if (currentAudio) {
-        currentAudio.pause(); // Stop the current audio
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
     }
-    currentAudio = new Audio(`sounds/${file}`);
+
+    currentAudio = new Audio(`sounds/${sound}.mp3`);
     currentAudio.play();
-}
+  });
+});
 
-function stopSound() {
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0; // Reset to the start
-    }
-}
+stopButton.addEventListener("click", () => {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+});

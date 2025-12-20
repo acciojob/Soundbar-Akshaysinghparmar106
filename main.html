@@ -2,18 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soundbar</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+  <meta charset="UTF-8">
+  <title>Soundbar</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="buttons">
-        <button class="btn" data-sound="sound1.mp3">Sound 1</button>
-        <button class="btn" data-sound="sound2.mp3">Sound 2</button>
-        <button class="btn" data-sound="sound3.mp3">Sound 3</button>
-        <button class="stop">Stop</button>
-    </div>
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+  <div class="sound-container">
+    <button class="sound-btn" data-sound="applause">applause</button>
+    <button class="sound-btn" data-sound="boo">boo</button>
+    <button class="sound-btn" data-sound="gasp">gasp</button>
+    <button class="sound-btn" data-sound="tada">tada</button>
+    <button class="sound-btn" data-sound="victory">victory</button>
+    <button class="sound-btn" data-sound="wrong">wrong</button>
+    <button class="sound-btn" id="stop">stop</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

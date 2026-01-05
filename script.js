@@ -1,28 +1,36 @@
 //your JS code here. If required.
-let currentAudio = null;
+const soundButtons = document.querySelectorAll(".btn");
+// console.log(soundButtons);
 
-const buttons = document.querySelectorAll(".sound-btn");
-const stopButton = document.getElementById("stop");
+const stopButton = document.querySelector(".stop");
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const sound = button.getAttribute("data-sound");
+let currAudio = null;
 
-    if (!sound) return;
-
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
+function playSound(soundFile) {
+    if(currAudio) {
+        currAudio.pause();
+        currAudio.currentTime = 0;
     }
 
-    currentAudio = new Audio(`sounds/${sound}.mp3`);
-    currentAudio.play();
-  });
-});
+    currAudio = new Audio(soundFile);
+    currAudio.play();
+    console.log(currAudio);
+}
 
-stopButton.addEventListener("click", () => {
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-});
+soundButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const soundFile = button.getAttribute("data-sound");
+        console.log(soundFile);
+        playSound(soundFile);
+    })
+})
+
+stopButton.addEventListener('click', () => {
+    console.log(currAudio);
+
+    if(currAudio) {
+        console.log("audio is paused");
+        currAudio.pause();
+        currAudio.currentTime = 0; //restart the song
+    }
+})
